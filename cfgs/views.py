@@ -45,15 +45,11 @@ class DeviceTypeViewSet(viewsets.ModelViewSet):
     serializer_class = DeviceTypeSerializer
 
 
-# class PTsInitializeViewSet(viewsets.ModelViewSet):
-#     pts = PT.objects.all()
-#     if len(pts) == 0:
-#         pts_source_data = "sources/pts_data.csv"
-#         with open(pts_source_data) as data:
-#             reader = csv.reader(f, delimiter="|")
-#             for line in reader:
-#                 pt = PT(vpn=line[0], name=line[1],
-#                         hostgroup=line[2], nagios_ip=line[3])
-#                 p.save()
-#     queryset = PT.objects.all()
-#     serializer_class = PTSerializer
+class CFGsViewSet(viewsets.ViewSet):
+    @action(detail=False, methods=['post'], name='download template')
+    def download_template(self, request):
+        file_path = "/home/carlos/kio/PITA/cfgs/sources/template.csv"
+        FilePointer = open(file_path, "r")
+        response = HttpResponse(FilePointer, content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename=template.csv'
+        return response
