@@ -1,0 +1,5 @@
+<h1>Lista de PTs</h1>
+
+{% for pt in all_pts %}
+<h2>{{ pt.vpn }} - {{ pt.name }} - {{ pt.nagios_ip }}</h2>
+{% endfor %}
