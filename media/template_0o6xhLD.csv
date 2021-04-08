@@ -1,0 +1,3 @@
+vpn,hostname,ip,type(switches|firewalls|servers|linux|windows)
+32,SVR032TEST01,10.200.116.254,linux
+121,SWI1-121-2,10.200.25.7,switches

@@ -1,14 +1,39 @@
-from django.shortcuts import render
 from django.http import HttpResponse
-from .models import PT, DeviceType
+from .models import PT, DeviceType, File
 from rest_framework import viewsets
-from .serializers import PTSerializer, DeviceTypeSerializer
+from .serializers import PTSerializer, DeviceTypeSerializer, FileSerializer
 from rest_framework.decorators import action
 from rest_framework.response import Response
 import csv
 from PITA.settings import BASE_DIR
+from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework import status
+import shutil
+import os
 
 # Create your endpoints here.
+
+
+def chooseTemplate(templateType):
+    template = ''
+    if templateType == "linux":
+        template = 'SVR-LINUX.cfg'
+    elif templateType == 'windows':
+        template = 'SVR-WINDOWS.cfg'
+    elif templateType == 'switches':
+        template = 'SWITCH.cfg'
+    elif templateType == 'vv':
+        template = 'SVR-VV.cfg'
+    elif templateType == 'servers':
+        template = 'SVR-TSM.cfg'
+    elif templateType == 'ddi':
+        template = 'SVR-DDI.cfg'
+    elif templateType == 'fwmember':
+        template = 'FW-MEMBER.cfg'
+    elif templateType == 'fwcluster':
+        template = 'FW-CLUSTER.cfg'
+
+    return template
 
 
 class PTsViewSet(viewsets.ModelViewSet):
@@ -53,3 +78,82 @@ class CFGsViewSet(viewsets.ViewSet):
         response = HttpResponse(FilePointer, content_type='text/csv')
         response['Content-Disposition'] = 'attachment; filename=template.csv'
         return response
+
+    @action(detail=False, methods=['post'], name='Upload file')
+    def upload_file(self, request, *args, **kwargs):
+        parser_classes = (MultiPartParser, FormParser)
+        file_serializer = FileSerializer(data=request.data)
+        if file_serializer.is_valid():
+            file_serializer.save()
+            return Response(file_serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    @action(detail=False, methods=['post'], name='Generate file')
+    def generate(self, request, *args, **kwargs):
+        fileSource = request.data['filename']
+        file_path = str(BASE_DIR)+str(fileSource)
+        templatesPath = str(BASE_DIR)+'/cfgs/sources/templates-cfgs/'
+        errors = ''
+        numOK = 0
+        numFail = 0
+        generatedPath = str(BASE_DIR)+'/cfgs/generated/'
+        try:
+            if(os.path.isdir(generatedPath)):
+                shutil.rmtree(generatedPath)
+            os.mkdir(generatedPath)
+        except:
+            print("Error al borrar el folder: {0}".format(generatedPath))
+
+        with open(file_path) as f:
+            reader = csv.reader(f, delimiter=",")
+
+            next(reader)
+            for line in reader:
+                templateOriginal = chooseTemplate(line[3])
+                template = templatesPath + chooseTemplate(line[3])
+
+                hostname = line[1]
+                ip = line[2]
+                pt = PT.objects.get(vpn=line[0])
+                hostgroup = pt.hostgroup
+                newFileName = hostname+".cfg"
+
+                try:
+                    with open(template) as tc:
+                        t = tc.read()
+                except:
+                    print("No se puede leer la plantilla {0}".format(template))
+                    numFail += 1
+                    if(len(errors) > 0):
+                        errors = errors + ', ' + newFileName
+                    else:
+                        errors = newFileName
+                    continue
+
+                with open(str(generatedPath)+str(newFileName), "w") as outfile:
+                    t = t.replace("IPTOCHANGE", ip)
+                    t = t.replace("HOSTNAMETOCHANGE", hostname)
+                    t = t.replace("HOSTGROUPTOCHANGE", hostgroup)
+                    try:
+                        outfile.write(t)
+                        numOK += 1
+                    except IOError as e:
+                        print("Error al escribir el archivo %s" % e)
+                        numFail += 1
+                        if(len(errors) > 0):
+                            errors = errors + ', ' + newFileName
+                        else:
+                            errors = newFileName
+                    except:
+                        print("Error desconocido")
+                        numFail += 1
+                        if(len(errors) > 0):
+                            errors = errors + ', ' + newFileName
+                        else:
+                            errors = newFileName
+
+        if(numFail > 0):
+            return Response({'message': 'fail', 'files_generated_ok': numOK, 'files_failed': numFail, 'errors': errors}, status=status.HTTP_409_CONFLICT)
+        else:
+            return Response({'message': 'ok', 'files_generated_ok': numOK, 'files_failed': numFail, 'errors': errors}, status=status.HTTP_201_CREATED)
