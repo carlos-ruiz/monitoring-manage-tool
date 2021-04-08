@@ -1,8 +1,0 @@
-vpn,hostname,ip,type(switches|firewalls|servers|linux|windows)
-32,SVR032TEST01,10.200.116.254,linux
-32,SWI1-032-2,10.200.25.7,switches
-32,LEN032STO-TSM,10.200.2.3,servers
-32,SVR032GE01,10.200.22.2,vv
-32,FW-032,10.200.1.12,fwcluster
-32,FW-032-1,10.200.3.3,fwmember
-32,SVR032HIP01,10.200.2.2,windows
