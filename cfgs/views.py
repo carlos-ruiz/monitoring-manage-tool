@@ -10,6 +10,7 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import status
 import shutil
 import os
+import json
 
 # Create your endpoints here.
 
@@ -58,16 +59,23 @@ class PTsViewSet(viewsets.ModelViewSet):
 
 
 class DeviceTypeViewSet(viewsets.ModelViewSet):
-    types = DeviceType.objects.all()
-    if len(types) == 0:
-        types_source_data = BASE_DIR+"/cfgs/sources/device_types.csv"
-        with open(types_source_data) as data:
-            reader = csv.reader(data)
-            for line in reader:
-                t = DeviceType(device_type=line[0])
-                t.save()
     queryset = DeviceType.objects.all()
     serializer_class = DeviceTypeSerializer
+
+    @action(detail=False, methods=['post'], name="Devices Type Initialize")
+    def dt_init(self, request):
+        types = DeviceType.objects.all()
+        if len(types) == 0:
+            types_source_data = str(BASE_DIR)+"/cfgs/sources/device_types.csv"
+            with open(types_source_data) as data:
+                reader = csv.reader(data)
+                for line in reader:
+                    t = DeviceType(
+                        device_type=line[1], nagiosDeviceHostgroup=line[0])
+                    t.save()
+        types = DeviceType.objects.all()
+        serializer = self.get_serializer(types, many=True)
+        return Response(serializer.data)
 
 
 class CFGsViewSet(viewsets.ViewSet):
@@ -94,10 +102,12 @@ class CFGsViewSet(viewsets.ViewSet):
         fileSource = request.data['filename']
         file_path = str(BASE_DIR)+str(fileSource)
         templatesPath = str(BASE_DIR)+'/cfgs/sources/templates-cfgs/'
-        errors = ''
+        errors = []
+        filesOK = []
         numOK = 0
         numFail = 0
-        generatedPath = str(BASE_DIR)+'/cfgs/generated/'
+        generatedPath = str(BASE_DIR)+'/cfgs/generated/'+fileSource[7:-4]+'/'
+        print("File name {0}".format(generatedPath))
         try:
             if(os.path.isdir(generatedPath)):
                 shutil.rmtree(generatedPath)
@@ -110,14 +120,18 @@ class CFGsViewSet(viewsets.ViewSet):
 
             next(reader)
             for line in reader:
-                templateOriginal = chooseTemplate(line[3])
                 template = templatesPath + chooseTemplate(line[3])
-
                 hostname = line[1]
                 ip = line[2]
                 pt = PT.objects.get(vpn=line[0])
                 hostgroup = pt.hostgroup
                 newFileName = hostname+".cfg"
+
+                if len(template) == 0:
+                    print("No se encontró la plantilla para este tipo de equipo")
+                    numFail += 1
+                    errors.append(newFileName)
+                    continue
 
                 try:
                     with open(template) as tc:
@@ -125,10 +139,7 @@ class CFGsViewSet(viewsets.ViewSet):
                 except:
                     print("No se puede leer la plantilla {0}".format(template))
                     numFail += 1
-                    if(len(errors) > 0):
-                        errors = errors + ', ' + newFileName
-                    else:
-                        errors = newFileName
+                    errors.append(newFileName)
                     continue
 
                 with open(str(generatedPath)+str(newFileName), "w") as outfile:
@@ -138,22 +149,17 @@ class CFGsViewSet(viewsets.ViewSet):
                     try:
                         outfile.write(t)
                         numOK += 1
+                        filesOK.append(newFileName)
                     except IOError as e:
                         print("Error al escribir el archivo %s" % e)
                         numFail += 1
-                        if(len(errors) > 0):
-                            errors = errors + ', ' + newFileName
-                        else:
-                            errors = newFileName
-                    except:
-                        print("Error desconocido")
+                        errors.append(newFileName)
+                    except Exception as e:
+                        print("Error desconocido: {0}".format(e))
                         numFail += 1
-                        if(len(errors) > 0):
-                            errors = errors + ', ' + newFileName
-                        else:
-                            errors = newFileName
+                        errors.append(newFileName)
 
         if(numFail > 0):
-            return Response({'message': 'fail', 'files_generated_ok': numOK, 'files_failed': numFail, 'errors': errors}, status=status.HTTP_409_CONFLICT)
+            return Response({'message': 'fail', 'files_generated_ok': numOK, 'files_failed': numFail, 'errors': errors, 'ok': filesOK}, status=status.HTTP_202_ACCEPTED)
         else:
-            return Response({'message': 'ok', 'files_generated_ok': numOK, 'files_failed': numFail, 'errors': errors}, status=status.HTTP_201_CREATED)
+            return Response({'message': 'ok', 'files_generated_ok': numOK, 'files_failed': numFail, 'errors': errors, 'ok': filesOK}, status=status.HTTP_201_CREATED)

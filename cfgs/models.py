@@ -4,10 +4,11 @@ from django.db import models
 
 
 class DeviceType(models.Model):
-    device_type = models.CharField(max_length=50, unique=True)
+    device_type = models.CharField(max_length=50)
+    nagiosDeviceHostgroup = models.CharField(max_length=50, default='')
 
     def __str__(self):
-        return self.name
+        return self.device_type
 
 
 class PT(models.Model):
