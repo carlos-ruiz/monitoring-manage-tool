@@ -11,6 +11,8 @@ from rest_framework import status
 import shutil
 import os
 import json
+import zipfile
+from datetime import date
 
 # Create your endpoints here.
 
@@ -35,6 +37,22 @@ def chooseTemplate(templateType):
         template = 'FW-CLUSTER.cfg'
 
     return template
+
+
+def zip_cfgs(source_path):
+    zip_path = "{0}cfgs_{1}.zip".format(
+        str(BASE_DIR)+'/cfgs/generated/', date.today().strftime("%d_%m_%Y"))
+    zf = zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED)
+    src = os.path.abspath(source_path)
+    for dirname, subdirs, files in os.walk(source_path):
+        for filename in files:
+            absname = os.path.abspath(os.path.join(dirname, filename))
+            arcname = absname[len(src) + 1:]
+            print('zipping %s as %s' %
+                  (os.path.join(dirname, filename), arcname))
+            zf.write(absname, arcname)
+    zf.close()
+    return zip_path
 
 
 class PTsViewSet(viewsets.ModelViewSet):
@@ -97,6 +115,18 @@ class CFGsViewSet(viewsets.ViewSet):
         else:
             return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    @action(detail=False, methods=['post'], name='Download zip')
+    def download_cfgs(self, request, *args, **kwargs):
+        source_path = request.data.get('path')
+        print("CFGs Path: {0}".format(source_path))
+        zip_path = zip_cfgs(source_path)
+        print("Path zip: {0}".format(zip_path))
+        zip_file = open(zip_path, 'rb')
+        response = HttpResponse(
+            zip_file, content_type='application/force-download')
+        response['Content-Disposition'] = 'attachment; filename="%s"' % 'cfgs.zip'
+        return response
+
     @action(detail=False, methods=['post'], name='Generate file')
     def generate(self, request, *args, **kwargs):
         fileSource = request.data['filename']
@@ -107,7 +137,6 @@ class CFGsViewSet(viewsets.ViewSet):
         numOK = 0
         numFail = 0
         generatedPath = str(BASE_DIR)+'/cfgs/generated/'+fileSource[7:-4]+'/'
-        print("File name {0}".format(generatedPath))
         try:
             if(os.path.isdir(generatedPath)):
                 shutil.rmtree(generatedPath)
@@ -160,6 +189,6 @@ class CFGsViewSet(viewsets.ViewSet):
                         errors.append(newFileName)
 
         if(numFail > 0):
-            return Response({'message': 'fail', 'files_generated_ok': numOK, 'files_failed': numFail, 'errors': errors, 'ok': filesOK}, status=status.HTTP_202_ACCEPTED)
+            return Response({'message': 'fail', 'files_generated_ok': numOK, 'files_failed': numFail, 'errors': errors, 'ok': filesOK, 'path': generatedPath}, status=status.HTTP_202_ACCEPTED)
         else:
-            return Response({'message': 'ok', 'files_generated_ok': numOK, 'files_failed': numFail, 'errors': errors, 'ok': filesOK}, status=status.HTTP_201_CREATED)
+            return Response({'message': 'ok', 'files_generated_ok': numOK, 'files_failed': numFail, 'errors': errors, 'ok': filesOK, 'path': generatedPath}, status=status.HTTP_201_CREATED)
