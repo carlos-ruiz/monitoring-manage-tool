@@ -1,7 +1,7 @@
 from django.http import HttpResponse
-from .models import PT, DeviceType
+from .models import PT, DeviceType, File, CFG
 from rest_framework import viewsets
-from .serializers import PTSerializer, DeviceTypeSerializer
+from .serializers import PTSerializer, DeviceTypeSerializer, FileSerializer, CFGSerializer
 from rest_framework.decorators import action
 from rest_framework.response import Response
 import csv
@@ -89,7 +89,7 @@ class DeviceTypeViewSet(viewsets.ModelViewSet):
                 reader = csv.reader(data)
                 for line in reader:
                     t = DeviceType(
-                        device_type=line[1], nagiosDeviceHostgroup=line[0])
+                        device_type=line[0], nagiosDeviceHostgroup=line[1])
                     t.save()
         types = DeviceType.objects.all()
         serializer = self.get_serializer(types, many=True)
@@ -179,6 +179,11 @@ class CFGsViewSet(viewsets.ViewSet):
                         outfile.write(t)
                         numOK += 1
                         filesOK.append(newFileName)
+                        vpn = PT.objects.get(pk=line[0])
+                        hostgroup = DeviceType.objects.get(device_type=line[3])
+                        cfg = CFG(folder=generatedPath, file=newFileName,
+                                  hostgroup=hostgroup, vpn=vpn)
+                        cfg.save()
                     except IOError as e:
                         print("Error al escribir el archivo %s" % e)
                         numFail += 1
