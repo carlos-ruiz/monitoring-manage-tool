@@ -1,7 +1,7 @@
 from django.http import HttpResponse
-from .models import PT, DeviceType, File
+from .models import PT, DeviceType
 from rest_framework import viewsets
-from .serializers import PTSerializer, DeviceTypeSerializer, FileSerializer
+from .serializers import PTSerializer, DeviceTypeSerializer
 from rest_framework.decorators import action
 from rest_framework.response import Response
 import csv

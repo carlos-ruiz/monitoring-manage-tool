@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import PT, DeviceType, File
+from .models import PT, DeviceType
 
 
 class PTSerializer(serializers.ModelSerializer):
@@ -11,10 +11,4 @@ class PTSerializer(serializers.ModelSerializer):
 class DeviceTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = DeviceType
-        fields = '__all__'
-
-
-class FileSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = File
         fields = '__all__'
