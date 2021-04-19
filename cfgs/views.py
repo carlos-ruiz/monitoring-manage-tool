@@ -232,6 +232,7 @@ class CFGsViewSet(viewsets.ViewSet):
     @action(detail=False, methods=['post'], name='Deploy to remotes nagios')
     def deploy(self, request, *args, **kwargs):
         cfgsPath = request.data['path']
+        logging.info("CFGs path: "+cfgsPath)
         cfgs = CFG.objects.filter(folder=cfgsPath).order_by(
             'vpn', 'hostgroup__nagiosDeviceHostgroup')
         filesUploaded = []
@@ -268,14 +269,17 @@ class CFGsViewSet(viewsets.ViewSet):
                     args = shlex.split(command_line)
                     subprocess.Popen(
                         args, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
-                    # cfgFile.uploaded = True
-                    # cfgFile.save()
                     cfgs = files.split(' ')
                     filesNames = ''
                     for cfg in cfgs:
                         lastSlash = cfg.rfind('/')
-                        filesUploaded.append(cfg[lastSlash+1:])
-                        filesNames += ' '+cfg[lastSlash+1:]
+                        fileName = cfg[lastSlash+1:]
+                        filesUploaded.append(fileName)
+                        cfgFile = CFG.objects.get(
+                            folder=cfgsPath, file=fileName)
+                        cfgFile.uploaded = True
+                        cfgFile.save()
+                        filesNames += ' '+fileName
                     logging.info("Uploaded {files} to {hostgroup} in {vpn}({ip})".format(
                         files=filesNames, hostgroup=hostgroup, vpn=vpn, ip=ip))
                 except Exception as e:

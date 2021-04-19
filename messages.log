@@ -1,2 +1,423 @@
-2021-04-19 05:42:36,286 - INFO - django.utils.autoreload - /home/carlos/kio/PITA/cfgs/views.py changed, reloading.
-2021-04-19 05:42:36,288 - DEBUG - asyncio - Using selector: EpollSelector
+2021-04-19 05:52:24,918 - INFO - root - CFGs path: /home/carlos/kio/PITA/cfgs/generated/template_w90FfeH/
+2021-04-19 05:52:25,056 - DEBUG - paramiko.transport - starting thread (client mode): 0xf4f0fac0
+2021-04-19 05:52:25,056 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:52:25,093 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:52:25,094 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:52:25,110 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:52:25,110 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:52:25,111 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:52:25,111 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:52:25,112 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:52:25,113 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:52:25,204 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:52:25,205 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:52:25,206 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:52:25,277 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:52:25,308 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:52:25,309 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:52:25,328 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:52:25,328 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:52:25,341 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:52:25,341 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:52:25,364 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:52:25,365 - INFO - root - Uploaded  FW-032.cfg FW-032-1.cfg to firewalls in 32(10.200.116.16)
+2021-04-19 05:52:25,398 - DEBUG - paramiko.transport - starting thread (client mode): 0xf469af40
+2021-04-19 05:52:25,410 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:52:25,410 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:52:25,410 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:52:25,426 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:52:25,426 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:52:25,427 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:52:25,427 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:52:25,427 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:52:25,427 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:52:25,499 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:52:25,502 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:52:25,513 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:52:25,569 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:52:25,608 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:52:25,609 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:52:25,627 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:52:25,627 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:52:25,647 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:52:25,648 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:52:25,665 - INFO - root - Uploaded  SVR032TEST01.cfg SVR032TEST02.cfg to linux in 32(10.200.116.16)
+2021-04-19 05:52:25,667 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:52:25,692 - DEBUG - paramiko.transport - starting thread (client mode): 0xf469a880
+2021-04-19 05:52:25,692 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:52:25,717 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:52:25,717 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:52:25,733 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:52:25,733 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:52:25,734 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:52:25,735 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:52:25,735 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:52:25,736 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:52:25,808 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:52:25,809 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:52:25,810 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:52:25,891 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:52:25,927 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:52:25,928 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:52:25,948 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:52:25,951 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:52:25,978 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:52:25,979 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:52:25,994 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:52:26,001 - INFO - root - Uploaded  LEN032STO-TSM.cfg LEN032STO01-TSM.cfg to servers in 32(10.200.116.16)
+2021-04-19 05:52:26,044 - DEBUG - paramiko.transport - starting thread (client mode): 0xf5833e20
+2021-04-19 05:52:26,045 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:52:26,076 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:52:26,076 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:52:26,094 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:52:26,095 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:52:26,095 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:52:26,095 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:52:26,096 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:52:26,096 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:52:26,173 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:52:26,174 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:52:26,175 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:52:26,260 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:52:26,291 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:52:26,292 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:52:26,316 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:52:26,316 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:52:26,338 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:52:26,338 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:52:26,348 - INFO - root - Uploaded  SWI1-032-2.cfg SWI1-032-3.cfg to switches in 32(10.200.116.16)
+2021-04-19 05:52:26,396 - DEBUG - paramiko.transport - starting thread (client mode): 0xf57a6af0
+2021-04-19 05:52:26,397 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:52:26,415 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:52:26,417 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:52:26,429 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:52:26,430 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:52:26,430 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:52:26,430 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:52:26,430 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:52:26,430 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:52:26,438 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:52:26,496 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:52:26,497 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:52:26,498 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:52:26,572 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:52:26,602 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:52:26,603 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:52:26,627 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:52:26,627 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:52:26,650 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:52:26,650 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:52:26,665 - INFO - root - Uploaded  SVR032GE01.cfg SVR032HIP01.cfg to windows in 32(10.200.116.16)
+2021-04-19 05:52:26,666 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:52:26,706 - DEBUG - paramiko.transport - starting thread (client mode): 0xf57e13a0
+2021-04-19 05:52:26,707 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:52:26,721 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:52:26,721 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:52:26,742 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:52:26,742 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:52:26,742 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:52:26,742 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:52:26,742 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:52:26,743 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:52:26,851 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:52:26,853 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:52:26,855 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:52:26,961 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:52:27,006 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:52:27,008 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:52:27,021 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:52:27,021 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:52:27,033 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:52:27,062 - DEBUG - paramiko.transport - [chan 0] EOF received (0)
+2021-04-19 05:52:27,062 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:52:27,063 - INFO - root - Errors: 0
+2021-04-19 05:52:27,123 - DEBUG - paramiko.transport - starting thread (client mode): 0xf46c7220
+2021-04-19 05:52:27,123 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:52:27,163 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:52:27,193 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:52:27,194 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:52:27,250 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:52:27,250 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:52:27,250 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:52:27,250 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:52:27,251 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:52:27,251 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:52:27,384 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:52:27,384 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:52:27,388 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:52:27,555 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:52:27,633 - INFO - paramiko.transport - Authentication (publickey) failed.
+2021-04-19 05:52:27,633 - DEBUG - paramiko.transport - Trying SSH agent key b'6dff8c335ab846467af9d8c38199d49c'
+2021-04-19 05:52:27,698 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:52:27,780 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:52:27,781 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:52:27,847 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:52:27,848 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:52:27,916 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:52:27,916 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:52:27,924 - INFO - root - Uploaded  FW-048.cfg FW-048-1.cfg to firewalls in 48(10.200.92.20)
+2021-04-19 05:52:27,989 - DEBUG - paramiko.transport - starting thread (client mode): 0xf469a340
+2021-04-19 05:52:27,989 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:52:28,016 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:52:28,071 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:52:28,071 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:52:28,139 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:52:28,140 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:52:28,140 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:52:28,140 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:52:28,141 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:52:28,141 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:52:28,259 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:52:28,267 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:52:28,270 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:52:28,447 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:52:28,535 - INFO - paramiko.transport - Authentication (publickey) failed.
+2021-04-19 05:52:28,536 - DEBUG - paramiko.transport - Trying SSH agent key b'6dff8c335ab846467af9d8c38199d49c'
+2021-04-19 05:52:28,609 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:52:28,713 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:52:28,714 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:52:28,773 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:52:28,773 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:52:28,834 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:52:28,835 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:52:28,852 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:52:28,863 - INFO - root - Uploaded  SVR048GE02.cfg SVR048HIP01.cfg SVR048HIP02.cfg SVR048HIP03.cfg to windows in 48(10.200.92.20)
+2021-04-19 05:52:28,932 - DEBUG - paramiko.transport - starting thread (client mode): 0xf464f7c0
+2021-04-19 05:52:28,932 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:52:29,013 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:52:29,013 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:52:29,072 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:52:29,072 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:52:29,074 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:52:29,074 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:52:29,074 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:52:29,075 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:52:29,190 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:52:29,191 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:52:29,192 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:52:29,364 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:52:29,430 - INFO - paramiko.transport - Authentication (publickey) failed.
+2021-04-19 05:52:29,431 - DEBUG - paramiko.transport - Trying SSH agent key b'6dff8c335ab846467af9d8c38199d49c'
+2021-04-19 05:52:29,487 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:52:29,564 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:52:29,565 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:52:29,624 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:52:29,624 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:52:29,683 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:52:29,708 - DEBUG - paramiko.transport - [chan 0] EOF received (0)
+2021-04-19 05:52:29,708 - INFO - root - Errors: 0
+2021-04-19 05:52:29,709 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:57:35,794 - INFO - django.utils.autoreload - /home/carlos/kio/PITA/cfgs/views.py changed, reloading.
+2021-04-19 05:57:35,797 - DEBUG - asyncio - Using selector: EpollSelector
+2021-04-19 05:57:35,846 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:57:35,846 - DEBUG - paramiko.transport - Dropping user packet because connection is dead.
+2021-04-19 05:57:46,349 - INFO - root - CFGs path: /home/carlos/kio/PITA/cfgs/generated/template_w90FfeH/
+2021-04-19 05:57:46,442 - DEBUG - paramiko.transport - starting thread (client mode): 0x1b157c10
+2021-04-19 05:57:46,443 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:57:46,460 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:57:46,461 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:57:46,474 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:57:46,474 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:57:46,475 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:57:46,476 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:57:46,476 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:57:46,477 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:57:46,532 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:57:46,532 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:57:46,533 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:57:46,590 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:57:46,611 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:57:46,614 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:57:46,627 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:57:46,628 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:57:46,649 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:57:46,651 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:57:46,746 - INFO - root - Uploaded  FW-032.cfg FW-032-1.cfg to firewalls in 32(10.200.116.16)
+2021-04-19 05:57:46,751 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:57:46,764 - DEBUG - paramiko.transport - starting thread (client mode): 0x1b9c8850
+2021-04-19 05:57:46,765 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:57:46,782 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:57:46,782 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:57:46,790 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:57:46,790 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:57:46,791 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:57:46,791 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:57:46,791 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:57:46,791 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:57:46,847 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:57:46,848 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:57:46,849 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:57:46,905 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:57:46,923 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:57:46,923 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:57:46,933 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:57:46,934 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:57:46,943 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:57:46,943 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:57:46,961 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:57:46,963 - INFO - root - Uploaded  SVR032TEST01.cfg SVR032TEST02.cfg to linux in 32(10.200.116.16)
+2021-04-19 05:57:46,975 - DEBUG - paramiko.transport - starting thread (client mode): 0x1ba3b8e0
+2021-04-19 05:57:46,976 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:57:46,996 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:57:46,996 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:57:47,004 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:57:47,004 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:57:47,004 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:57:47,004 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:57:47,004 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:57:47,004 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:57:47,062 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:57:47,062 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:57:47,064 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:57:47,118 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:57:47,143 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:57:47,144 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:57:47,154 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:57:47,154 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:57:47,164 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:57:47,166 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:57:47,184 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:57:47,201 - INFO - root - Uploaded  LEN032STO-TSM.cfg LEN032STO01-TSM.cfg to servers in 32(10.200.116.16)
+2021-04-19 05:57:47,217 - DEBUG - paramiko.transport - starting thread (client mode): 0x1ba55a60
+2021-04-19 05:57:47,217 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:57:47,231 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:57:47,232 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:57:47,243 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:57:47,243 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:57:47,244 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:57:47,244 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:57:47,244 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:57:47,245 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:57:47,304 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:57:47,305 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:57:47,308 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:57:47,361 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:57:47,387 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:57:47,390 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:57:47,400 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:57:47,400 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:57:47,413 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:57:47,414 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:57:47,433 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:57:47,459 - INFO - root - Uploaded  SWI1-032-2.cfg SWI1-032-3.cfg to switches in 32(10.200.116.16)
+2021-04-19 05:57:47,475 - DEBUG - paramiko.transport - starting thread (client mode): 0x1ba5d0a0
+2021-04-19 05:57:47,476 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:57:47,489 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:57:47,490 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:57:47,502 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:57:47,502 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:57:47,503 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:57:47,503 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:57:47,504 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:57:47,504 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:57:47,558 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:57:47,559 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:57:47,565 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:57:47,616 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:57:47,635 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:57:47,636 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:57:47,645 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:57:47,646 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:57:47,655 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:57:47,656 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:57:47,672 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:57:47,685 - INFO - root - Uploaded  SVR032GE01.cfg SVR032HIP01.cfg to windows in 32(10.200.116.16)
+2021-04-19 05:57:47,700 - DEBUG - paramiko.transport - starting thread (client mode): 0x1ba328b0
+2021-04-19 05:57:47,700 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:57:47,717 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:57:47,717 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:57:47,729 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:57:47,730 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:57:47,730 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:57:47,730 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:57:47,730 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:57:47,730 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:57:47,783 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:57:47,783 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:57:47,786 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:57:47,840 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:57:47,859 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:57:47,860 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:57:47,869 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:57:47,870 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:57:47,880 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:57:47,906 - DEBUG - paramiko.transport - [chan 0] EOF received (0)
+2021-04-19 05:57:47,907 - INFO - root - Errors: 0
+2021-04-19 05:57:47,908 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:57:47,909 - DEBUG - paramiko.transport - Dropping user packet because connection is dead.
+2021-04-19 05:57:47,910 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:57:47,977 - DEBUG - paramiko.transport - starting thread (client mode): 0x1ba22e20
+2021-04-19 05:57:47,977 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:57:48,038 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:57:48,039 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:57:48,095 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:57:48,095 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:57:48,096 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:57:48,096 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:57:48,096 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:57:48,097 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:57:48,201 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:57:48,203 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:57:48,207 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:57:48,354 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:57:48,431 - INFO - paramiko.transport - Authentication (publickey) failed.
+2021-04-19 05:57:48,431 - DEBUG - paramiko.transport - Trying SSH agent key b'6dff8c335ab846467af9d8c38199d49c'
+2021-04-19 05:57:48,493 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:57:48,574 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:57:48,575 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:57:48,634 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:57:48,634 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:57:48,693 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:57:48,695 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:57:48,711 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:57:48,745 - INFO - root - Uploaded  FW-048.cfg FW-048-1.cfg to firewalls in 48(10.200.92.20)
+2021-04-19 05:57:48,811 - DEBUG - paramiko.transport - starting thread (client mode): 0x1a0f2e80
+2021-04-19 05:57:48,813 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:57:48,871 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:57:48,872 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:57:48,928 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:57:48,928 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:57:48,929 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:57:48,929 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:57:48,929 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:57:48,929 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:57:49,037 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:57:49,038 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:57:49,042 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:57:49,188 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:57:49,255 - INFO - paramiko.transport - Authentication (publickey) failed.
+2021-04-19 05:57:49,255 - DEBUG - paramiko.transport - Trying SSH agent key b'6dff8c335ab846467af9d8c38199d49c'
+2021-04-19 05:57:49,312 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:57:49,386 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:57:49,388 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:57:49,447 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:57:49,448 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:57:49,507 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:57:49,508 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 05:57:49,534 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 05:57:49,609 - INFO - root - Uploaded  SVR048GE02.cfg SVR048HIP01.cfg SVR048HIP02.cfg SVR048HIP03.cfg to windows in 48(10.200.92.20)
+2021-04-19 05:57:49,669 - DEBUG - paramiko.transport - starting thread (client mode): 0x1a0d7fa0
+2021-04-19 05:57:49,669 - DEBUG - paramiko.transport - Local version/idstring: SSH-2.0-paramiko_2.7.2
+2021-04-19 05:57:49,734 - DEBUG - paramiko.transport - Remote version/idstring: SSH-2.0-OpenSSH_6.6.1
+2021-04-19 05:57:49,734 - INFO - paramiko.transport - Connected (version 2.0, client OpenSSH_6.6.1)
+2021-04-19 05:57:49,795 - DEBUG - paramiko.transport - kex algos:['curve25519-sha256@libssh.org', 'ecdh-sha2-nistp256', 'ecdh-sha2-nistp384', 'ecdh-sha2-nistp521', 'diffie-hellman-group-exchange-sha256', 'diffie-hellman-group-exchange-sha1', 'diffie-hellman-group14-sha1', 'diffie-hellman-group1-sha1'] server key:['ssh-rsa', 'ecdsa-sha2-nistp256', 'ssh-ed25519'] client encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] server encrypt:['aes128-ctr', 'aes192-ctr', 'aes256-ctr', 'arcfour256', 'arcfour128', 'aes128-gcm@openssh.com', 'aes256-gcm@openssh.com', 'chacha20-poly1305@openssh.com', 'aes128-cbc', '3des-cbc', 'blowfish-cbc', 'cast128-cbc', 'aes192-cbc', 'aes256-cbc', 'arcfour', 'rijndael-cbc@lysator.liu.se'] client mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] server mac:['hmac-md5-etm@openssh.com', 'hmac-sha1-etm@openssh.com', 'umac-64-etm@openssh.com', 'umac-128-etm@openssh.com', 'hmac-sha2-256-etm@openssh.com', 'hmac-sha2-512-etm@openssh.com', 'hmac-ripemd160-etm@openssh.com', 'hmac-sha1-96-etm@openssh.com', 'hmac-md5-96-etm@openssh.com', 'hmac-md5', 'hmac-sha1', 'umac-64@openssh.com', 'umac-128@openssh.com', 'hmac-sha2-256', 'hmac-sha2-512', 'hmac-ripemd160', 'hmac-ripemd160@openssh.com', 'hmac-sha1-96', 'hmac-md5-96'] client compress:['none', 'zlib@openssh.com'] server compress:['none', 'zlib@openssh.com'] client lang:[''] server lang:[''] kex follows?False
+2021-04-19 05:57:49,795 - DEBUG - paramiko.transport - Kex agreed: curve25519-sha256@libssh.org
+2021-04-19 05:57:49,795 - DEBUG - paramiko.transport - HostKey agreed: ecdsa-sha2-nistp256
+2021-04-19 05:57:49,796 - DEBUG - paramiko.transport - Cipher agreed: aes128-ctr
+2021-04-19 05:57:49,796 - DEBUG - paramiko.transport - MAC agreed: hmac-sha2-256
+2021-04-19 05:57:49,796 - DEBUG - paramiko.transport - Compression agreed: none
+2021-04-19 05:57:49,895 - DEBUG - paramiko.transport - kex engine KexCurve25519 specified hash_algo <built-in function openssl_sha256>
+2021-04-19 05:57:49,895 - DEBUG - paramiko.transport - Switch to new keys ...
+2021-04-19 05:57:49,898 - DEBUG - paramiko.transport - Trying SSH agent key b'3ed25eb1a71b8d0f481c3b03b91048ff'
+2021-04-19 05:57:50,049 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:57:50,122 - INFO - paramiko.transport - Authentication (publickey) failed.
+2021-04-19 05:57:50,123 - DEBUG - paramiko.transport - Trying SSH agent key b'6dff8c335ab846467af9d8c38199d49c'
+2021-04-19 05:57:50,181 - DEBUG - paramiko.transport - userauth is OK
+2021-04-19 05:57:50,262 - INFO - paramiko.transport - Authentication (publickey) successful!
+2021-04-19 05:57:50,262 - DEBUG - paramiko.transport - [chan 0] Max packet in: 32768 bytes
+2021-04-19 05:57:50,322 - DEBUG - paramiko.transport - [chan 0] Max packet out: 32768 bytes
+2021-04-19 05:57:50,322 - DEBUG - paramiko.transport - Secsh channel 0 opened.
+2021-04-19 05:57:50,379 - DEBUG - paramiko.transport - [chan 0] Sesch channel 0 request ok
+2021-04-19 05:57:50,404 - DEBUG - paramiko.transport - [chan 0] EOF received (0)
+2021-04-19 05:57:50,404 - INFO - root - Errors: 0
+2021-04-19 05:57:50,404 - DEBUG - paramiko.transport - EOF in transport thread
