@@ -13,10 +13,15 @@ import os
 import json
 import zipfile
 from datetime import date
+import shlex
 import subprocess
-from paramiko.client import SSHClient, WarningPolicy
+from .SSHConnection import SSHConnection
+import logging
 
 # Create your endpoints here.
+
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s - %(message)s', filename='messages.log',
+                    encoding='utf-8', level=logging.DEBUG)
 
 
 def chooseTemplate(templateType):
@@ -50,36 +55,32 @@ def zip_cfgs(source_path):
         for filename in files:
             absname = os.path.abspath(os.path.join(dirname, filename))
             arcname = absname[len(src) + 1:]
-            print('zipping %s as %s' %
-                  (os.path.join(dirname, filename), arcname))
+            logging.info('zipping %s as %s' %
+                         (os.path.join(dirname, filename), arcname))
             zf.write(absname, arcname)
     zf.close()
     return zip_path
 
 
 def validateUploads(ipnagios):
-    username = 'root'
-    password = 'Pita123$'
-    con = SSHClient()
-    con.load_system_host_keys()
-    con.set_missing_host_key_policy(WarningPolicy)
-    con.connect(ipnagios, username=username, password=password, timeout=60)
+    sshConnection = SSHConnection()
+    con = sshConnection.getConnection(ipnagios)
 
     stdin, stdout, stderr = con.exec_command(
         '/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg | grep Errors: | awk \'{print $3}\'')
-
     # process the output
     if stderr.read() == b'':
         for line in stdout.readlines():
             errors = line.strip()
-            print("Errors: %s" % errors)
+            logging.info("Errors: %s" % errors)
             # if errors == '0':
             # stdin, stdout, stderr = con.exec_command(
             #     'service nagios restart')
             # print(stdout.readlines())
 
     else:
-        print(stderr.read())
+        logging.error(stderr.read())
+    con.close()
 
 
 class PTsViewSet(viewsets.ModelViewSet):
@@ -145,9 +146,9 @@ class CFGsViewSet(viewsets.ViewSet):
     @action(detail=False, methods=['post'], name='Download zip')
     def download_cfgs(self, request, *args, **kwargs):
         source_path = request.data.get('path')
-        print("CFGs Path: {0}".format(source_path))
+        logging.debug("CFGs Path: {0}".format(source_path))
         zip_path = zip_cfgs(source_path)
-        print("Path zip: {0}".format(zip_path))
+        logging.debug("Path zip: {0}".format(zip_path))
         zip_file = open(zip_path, 'rb')
         response = HttpResponse(
             zip_file, content_type='application/force-download')
@@ -169,7 +170,8 @@ class CFGsViewSet(viewsets.ViewSet):
                 shutil.rmtree(generatedPath)
             os.mkdir(generatedPath)
         except:
-            print("Error al borrar el folder: {0}".format(generatedPath))
+            logging.error(
+                "Error al borrar el folder: {0}".format(generatedPath))
 
         with open(file_path) as f:
             reader = csv.reader(f, delimiter=",")
@@ -184,7 +186,8 @@ class CFGsViewSet(viewsets.ViewSet):
                 newFileName = hostname+".cfg"
 
                 if len(template) == 0:
-                    print("No se encontró la plantilla para este tipo de equipo")
+                    logging.error(
+                        "No se encontró la plantilla para este tipo de equipo")
                     numFail += 1
                     errors.append(newFileName)
                     continue
@@ -193,7 +196,8 @@ class CFGsViewSet(viewsets.ViewSet):
                     with open(template) as tc:
                         t = tc.read()
                 except:
-                    print("No se puede leer la plantilla {0}".format(template))
+                    logging.error(
+                        "No se puede leer la plantilla {0}".format(template))
                     numFail += 1
                     errors.append(newFileName)
                     continue
@@ -212,11 +216,11 @@ class CFGsViewSet(viewsets.ViewSet):
                                   hostgroup=hostgroup, vpn=vpn, uploaded=False)
                         cfg.save()
                     except IOError as e:
-                        print("Error al escribir el archivo %s" % e)
+                        logging.error("Error al escribir el archivo %s" % e)
                         numFail += 1
                         errors.append(newFileName)
                     except Exception as e:
-                        print("Error desconocido: {0}".format(e))
+                        logging.error("Error desconocido: {0}".format(e))
                         numFail += 1
                         errors.append(newFileName)
 
@@ -228,25 +232,63 @@ class CFGsViewSet(viewsets.ViewSet):
     @action(detail=False, methods=['post'], name='Deploy to remotes nagios')
     def deploy(self, request, *args, **kwargs):
         cfgsPath = request.data['path']
-        cfgs = CFG.objects.filter(folder=cfgsPath)
+        cfgs = CFG.objects.filter(folder=cfgsPath).order_by(
+            'vpn', 'hostgroup__nagiosDeviceHostgroup')
         filesUploaded = []
         filesError = []
 
+        filesToUpload = {}
         for cfgFile in cfgs:
-            print("Uploading {0} to {1} in server {2} PT {3}".format(
-                cfgFile.file, cfgFile.hostgroup.nagiosDeviceHostgroup, cfgFile.vpn.nagios_ip, cfgFile.vpn.vpn))
-            try:
-                subprocess.Popen(["scp", str(cfgsPath)+cfgFile.file, "root@{nagiosIP}:/tmp/components/{hostgroup}/{file}".format(
-                    nagiosIP=cfgFile.vpn.nagios_ip, hostgroup=cfgFile.hostgroup.nagiosDeviceHostgroup, file=cfgFile.file)], stdout=subprocess.PIPE, stdin=subprocess.PIPE)
-                validateUploads(cfgFile.vpn.nagios_ip)
-                cfgFile.uploaded = True
-                cfgFile.save()
-                filesUploaded.append(cfgFile.file)
-            except Exception as e:
-                print(e)
-                print("Error uploading {0} to {1} in server {2} PT {3}".format(
-                    cfgFile.file, cfgFile.hostgroup.nagiosDeviceHostgroup, cfgFile.vpn.nagios_ip, cfgFile.vpn.vpn))
-                filesError.append(cfgFile.file)
-                continue
+            vpn = cfgFile.vpn.vpn
+            hostgroup = cfgFile.hostgroup.nagiosDeviceHostgroup
+
+            if vpn in filesToUpload:
+                if hostgroup in filesToUpload[vpn]:
+                    filesToUpload[vpn][hostgroup] += ' ' + \
+                        str(cfgsPath)+cfgFile.file
+                else:
+                    filesToUpload[vpn][hostgroup] = str(cfgsPath)+cfgFile.file
+            else:
+                filesToUpload.update(
+                    {vpn: {hostgroup: str(cfgsPath)+cfgFile.file, "ip": cfgFile.vpn.nagios_ip}})
+
+        for vpn in filesToUpload:
+            ip = filesToUpload[vpn].pop('ip')
+
+            for hostgroup in filesToUpload[vpn]:
+                files = filesToUpload[vpn][hostgroup]
+                try:
+                    create_folder = "mkdir -p /tmp/components/{hostgroup}".format(
+                        hostgroup=hostgroup)
+                    sshConnection = SSHConnection().getConnection(ip)
+                    sshConnection.exec_command(create_folder)
+                    sshConnection.close()
+                    command_line = "scp {files} root@{nagiosIP}:/tmp/components/{hostgroup}/".format(
+                        files=files, nagiosIP=ip, hostgroup=hostgroup)
+                    args = shlex.split(command_line)
+                    subprocess.Popen(
+                        args, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+                    # cfgFile.uploaded = True
+                    # cfgFile.save()
+                    cfgs = files.split(' ')
+                    filesNames = ''
+                    for cfg in cfgs:
+                        lastSlash = cfg.rfind('/')
+                        filesUploaded.append(cfg[lastSlash+1:])
+                        filesNames += ' '+cfg[lastSlash+1:]
+                    logging.info("Uploaded {files} to {hostgroup} in {vpn}({ip})".format(
+                        files=filesNames, hostgroup=hostgroup, vpn=vpn, ip=ip))
+                except Exception as e:
+                    cfgs = files.split(' ')
+                    filesNames = ''
+                    for cfg in cfgs:
+                        lastSlash = cfg.rfind('/')
+                        filesError.append(cfg[lastSlash+1:])
+                        filesNames += ' '+cfg[lastSlash+1:]
+                    logging.error("Error uploading {0} to {1} in server {2} PT {3}".format(
+                        filesNames, hostgroup, ip, vpn))
+                    logging.error(e)
+                    continue
+            validateUploads(ip)
 
         return Response({'message': 'Files uploaded', 'files_uploaded_ok': len(filesUploaded), 'files_failed': len(filesError), 'errors': filesError, 'ok': filesUploaded}, status=status.HTTP_200_OK)

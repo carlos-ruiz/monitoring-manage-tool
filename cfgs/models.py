@@ -34,4 +34,4 @@ class CFG(models.Model):
     uploaded = models.BooleanField()
 
     def __str__(self):
-        return self.file
+        return self.vpn.vpn+" "+self.hostgroup.nagiosDeviceHostgroup+" "+self.file

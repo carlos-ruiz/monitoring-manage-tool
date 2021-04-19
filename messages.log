@@ -1,0 +1,2 @@
+2021-04-19 05:42:36,286 - INFO - django.utils.autoreload - /home/carlos/kio/PITA/cfgs/views.py changed, reloading.
+2021-04-19 05:42:36,288 - DEBUG - asyncio - Using selector: EpollSelector
