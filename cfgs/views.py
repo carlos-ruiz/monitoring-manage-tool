@@ -42,6 +42,12 @@ def chooseTemplate(templateType):
         template = 'FW-MEMBER.cfg'
     elif templateType == 'fwcluster':
         template = 'FW-CLUSTER.cfg'
+    elif templateType == 'esx':
+        template = 'SVR-ESX.cfg'
+    elif templateType == 'ap':
+        template = 'AP.cfg'
+    elif templateType == 'planet':
+        template = 'PLANET.cfg'
 
     return template
 

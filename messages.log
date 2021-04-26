@@ -421,3 +421,74 @@
 2021-04-19 05:57:50,404 - DEBUG - paramiko.transport - [chan 0] EOF received (0)
 2021-04-19 05:57:50,404 - INFO - root - Errors: 0
 2021-04-19 05:57:50,404 - DEBUG - paramiko.transport - EOF in transport thread
+2021-04-19 06:03:51,034 - DEBUG - asyncio - Using selector: EpollSelector
+2021-04-19 06:03:51,093 - DEBUG - paramiko.transport - [chan 0] EOF sent (0)
+2021-04-19 06:03:51,093 - DEBUG - paramiko.transport - Dropping user packet because connection is dead.
+2021-04-26 11:12:11,007 - ERROR - root - No se puede leer la plantilla /home/carlos/kio/PITA/cfgs/sources/templates-cfgs/
+2021-04-26 11:12:11,009 - ERROR - root - No se puede leer la plantilla /home/carlos/kio/PITA/cfgs/sources/templates-cfgs/
+2021-04-26 11:12:11,010 - ERROR - root - No se puede leer la plantilla /home/carlos/kio/PITA/cfgs/sources/templates-cfgs/
+2021-04-26 11:12:24,299 - DEBUG - root - CFGs Path: /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/
+2021-04-26 11:12:24,300 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/WKS051PMC03.cfg as WKS051PMC03.cfg
+2021-04-26 11:12:24,314 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/WKS051PMC02.cfg as WKS051PMC02.cfg
+2021-04-26 11:12:24,314 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/WKS051PMC09.cfg as WKS051PMC09.cfg
+2021-04-26 11:12:24,315 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/SVR051MQ01.cfg as SVR051MQ01.cfg
+2021-04-26 11:12:24,315 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/WKS051PMC04.cfg as WKS051PMC04.cfg
+2021-04-26 11:12:24,315 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/SVR051RHV02.cfg as SVR051RHV02.cfg
+2021-04-26 11:12:24,315 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/WKS051PMC01.cfg as WKS051PMC01.cfg
+2021-04-26 11:12:24,316 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/WKS051PMC08.cfg as WKS051PMC08.cfg
+2021-04-26 11:12:24,316 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/SVR051ODB02.cfg as SVR051ODB02.cfg
+2021-04-26 11:12:24,316 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/SVR051GKPR01.cfg as SVR051GKPR01.cfg
+2021-04-26 11:12:24,316 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/WKS051PMC10.cfg as WKS051PMC10.cfg
+2021-04-26 11:12:24,317 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/WKS051PMC07.cfg as WKS051PMC07.cfg
+2021-04-26 11:12:24,317 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/SVR051RHV01.cfg as SVR051RHV01.cfg
+2021-04-26 11:12:24,318 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/WKS051PMC06.cfg as WKS051PMC06.cfg
+2021-04-26 11:12:24,318 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/SVR051ODB01.cfg as SVR051ODB01.cfg
+2021-04-26 11:12:24,318 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/SVR051MQ02.cfg as SVR051MQ02.cfg
+2021-04-26 11:12:24,318 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_WlEoACI/WKS051PMC05.cfg as WKS051PMC05.cfg
+2021-04-26 11:12:24,319 - DEBUG - root - Path zip: /home/carlos/kio/PITA/cfgs/generated/cfgs_26_04_2021.zip
+2021-04-26 11:16:11,315 - ERROR - root - No se puede leer la plantilla /home/carlos/kio/PITA/cfgs/sources/templates-cfgs/
+2021-04-26 11:16:11,317 - ERROR - root - No se puede leer la plantilla /home/carlos/kio/PITA/cfgs/sources/templates-cfgs/
+2021-04-26 11:16:11,321 - ERROR - root - No se puede leer la plantilla /home/carlos/kio/PITA/cfgs/sources/templates-cfgs/
+2021-04-26 11:16:16,282 - DEBUG - root - CFGs Path: /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/
+2021-04-26 11:16:16,282 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/WKS051PMC03.cfg as WKS051PMC03.cfg
+2021-04-26 11:16:16,282 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/WKS051PMC02.cfg as WKS051PMC02.cfg
+2021-04-26 11:16:16,283 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/WKS051PMC09.cfg as WKS051PMC09.cfg
+2021-04-26 11:16:16,283 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/SVR051MQ01.cfg as SVR051MQ01.cfg
+2021-04-26 11:16:16,284 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/WKS051PMC04.cfg as WKS051PMC04.cfg
+2021-04-26 11:16:16,284 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/SVR051RHV02.cfg as SVR051RHV02.cfg
+2021-04-26 11:16:16,284 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/WKS051PMC01.cfg as WKS051PMC01.cfg
+2021-04-26 11:16:16,285 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/WKS051PMC08.cfg as WKS051PMC08.cfg
+2021-04-26 11:16:16,285 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/SVR051ODB02.cfg as SVR051ODB02.cfg
+2021-04-26 11:16:16,285 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/SVR051GKPR01.cfg as SVR051GKPR01.cfg
+2021-04-26 11:16:16,287 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/WKS051PMC10.cfg as WKS051PMC10.cfg
+2021-04-26 11:16:16,288 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/WKS051PMC07.cfg as WKS051PMC07.cfg
+2021-04-26 11:16:16,288 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/SVR051RHV01.cfg as SVR051RHV01.cfg
+2021-04-26 11:16:16,288 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/WKS051PMC06.cfg as WKS051PMC06.cfg
+2021-04-26 11:16:16,289 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/SVR051ODB01.cfg as SVR051ODB01.cfg
+2021-04-26 11:16:16,289 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/SVR051MQ02.cfg as SVR051MQ02.cfg
+2021-04-26 11:16:16,290 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_9L8HkLj/WKS051PMC05.cfg as WKS051PMC05.cfg
+2021-04-26 11:16:16,295 - DEBUG - root - Path zip: /home/carlos/kio/PITA/cfgs/generated/cfgs_26_04_2021.zip
+2021-04-26 11:19:38,088 - DEBUG - root - CFGs Path: /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/
+2021-04-26 11:19:38,089 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/WKS051PMC03.cfg as WKS051PMC03.cfg
+2021-04-26 11:19:38,089 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/WKS051PMC02.cfg as WKS051PMC02.cfg
+2021-04-26 11:19:38,090 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/WKS051PMC09.cfg as WKS051PMC09.cfg
+2021-04-26 11:19:38,090 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/SVR051MQ01.cfg as SVR051MQ01.cfg
+2021-04-26 11:19:38,092 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/WKS051PMC04.cfg as WKS051PMC04.cfg
+2021-04-26 11:19:38,093 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/SVR051RHV02.cfg as SVR051RHV02.cfg
+2021-04-26 11:19:38,093 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/WKS051PMC01.cfg as WKS051PMC01.cfg
+2021-04-26 11:19:38,094 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/WKS051PMC08.cfg as WKS051PMC08.cfg
+2021-04-26 11:19:38,095 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/SVR051ODB02.cfg as SVR051ODB02.cfg
+2021-04-26 11:19:38,095 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/SVR051GKPR01-TSM.cfg as SVR051GKPR01-TSM.cfg
+2021-04-26 11:19:38,097 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/SVR051GKPR01.cfg as SVR051GKPR01.cfg
+2021-04-26 11:19:38,098 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/WKS051PMC10.cfg as WKS051PMC10.cfg
+2021-04-26 11:19:38,100 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/WKS051PMC07.cfg as WKS051PMC07.cfg
+2021-04-26 11:19:38,101 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/SVR051RHV01.cfg as SVR051RHV01.cfg
+2021-04-26 11:19:38,101 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/WKS051PMC06.cfg as WKS051PMC06.cfg
+2021-04-26 11:19:38,102 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/SVR051RHV02-TSM.cfg as SVR051RHV02-TSM.cfg
+2021-04-26 11:19:38,104 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/SVR051ODB01.cfg as SVR051ODB01.cfg
+2021-04-26 11:19:38,105 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/SVR051MQ02.cfg as SVR051MQ02.cfg
+2021-04-26 11:19:38,105 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/SVR051RHV01-TSM.cfg as SVR051RHV01-TSM.cfg
+2021-04-26 11:19:38,106 - INFO - root - zipping /home/carlos/kio/PITA/cfgs/generated/template_ib6PJGh/WKS051PMC05.cfg as WKS051PMC05.cfg
+2021-04-26 11:19:38,107 - DEBUG - root - Path zip: /home/carlos/kio/PITA/cfgs/generated/cfgs_26_04_2021.zip
+2021-04-26 11:45:01,504 - INFO - django.utils.autoreload - /home/carlos/kio/PITA/cfgs/views.py changed, reloading.
+2021-04-26 11:45:01,506 - DEBUG - asyncio - Using selector: EpollSelector
