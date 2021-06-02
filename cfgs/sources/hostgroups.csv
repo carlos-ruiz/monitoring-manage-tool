@@ -253,7 +253,7 @@
 437,437_Aduana_Cancun_Sala_Internacional_del_Aeropuerto_Cozumel
 438,438_Aduana_Cancun_Terminal_FBO_Vuelos_Privados
 439,439_Aduana_Coatzacoalcos_Aeropuerto_Minatitlan
-440,440_San_Felipe
+440,440_Aduana_Mexicali_Aeropuerto_San_Felipe
 441,441_Aduana_Piedras_Negras_Aeropuerto_Piedras_Negras
 443,443_Aduana_Piedras_Negras_Aeropuerto_Monclova
 444,444_Aduana_Piedras_Negras_Patio_Fiscal
@@ -281,7 +281,7 @@
 503,503_Aduana_Sonoyta_Aeropuerto_Internacional_del_Mar_Cortes
 504,Aduana_Cd_Hidalgo_Aeropuerto_Internacional_Albino_Corzo
 513,513_Local_Toluca_Modulo_Valle_Bravo
-517,517_Local_Cd_Victoria_MFS_Cd_Mante
+517,517_Local_Cd_Victoria_MFS_Cd_Mante_Modulo
 518,518_Local_Celaya_Modulo_Acambaro
 519,519_Local_Coatzacoalcos_Modulo_San_Andres_Tuxtla
 520,520_Local_Irapuato_Modulo_Salamanca
@@ -301,7 +301,7 @@
 550,550_Aduana_Catazaja
 552,552_La_Trinitaria
 572,572_Centro
-573,573_antes_303_Local_Toluca_Sede
+573,573_Local_Toluca_Sede
 580,580_Guadalupe_Tornillo
 581,581_Seccion_Aduanera_TPT
 584,584_Local_Chetumal_Sede
@@ -310,5 +310,5 @@
 590,590_Matrix
 591,591_Interpuerto_Monterrey
 595,595_ALE
-597,597_FLY_ACROSS
+597,597_Fly_Across
 601,601_Recinto_Fiscal_Hangar_Asertec
