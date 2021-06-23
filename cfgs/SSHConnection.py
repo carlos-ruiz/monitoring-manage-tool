@@ -15,8 +15,8 @@ class SSHConnection(object):
             SSHConnection.connection.load_system_host_keys()
             SSHConnection.connection.set_missing_host_key_policy(AutoAddPolicy)
             # SSHConnection.connection.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-            homePath = os.path.expanduser('~')
-            key = RSAKey.from_private_key_file(str(homePath)+"/.ssh/id_rsa")
+            # homePath = os.path.expanduser('~')
+            # key = RSAKey.from_private_key_file(str(homePath)+"/.ssh/id_rsa")
         return SSHConnection.__instance
 
     def getConnection(self, ip):

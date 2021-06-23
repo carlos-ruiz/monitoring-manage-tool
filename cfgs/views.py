@@ -71,13 +71,13 @@ def zip_cfgs(source_path):
     return zip_path
 
 
-def validateUploads(ipnagios):
+def validateUploads(pt, ipnagios):
     sshConnection = SSHConnection()
     try:
         con = sshConnection.getConnection(ipnagios)
     except:
         logging.error("No se puede conectar al nagios {0}".format(ipnagios))
-        return
+        return False
 
     stdin, stdout, stderr = con.exec_command(
         '/usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg | grep Errors: | awk \'{print $3}\'')
@@ -90,8 +90,14 @@ def validateUploads(ipnagios):
                 stdin, stdout, stderr = con.exec_command(
                     'service nagios restart')
                 print(stdout.readlines())
+                return True
+            else:
+                logging.error(
+                    "Se presentan errores en el PT {0}, Favor de revisar el nagios".format(pt))
+                return False
     else:
         logging.error(stderr.read())
+        return False
     con.close()
 
 
@@ -254,6 +260,7 @@ class CFGsViewSet(viewsets.ViewSet):
             'vpn', 'hostgroup__nagiosDeviceHostgroup')
         filesUploaded = []
         filesError = []
+        nagiosServiceErrors = []
 
         filesToUpload = {}
         for cfgFile in cfgs:
@@ -329,6 +336,12 @@ class CFGsViewSet(viewsets.ViewSet):
                         filesNames, hostgroup, ip, vpn))
                     logging.error(e)
                     continue
-            validateUploads(ip)
+            nagiosSeviceValidatioOk = validateUploads(vpn, ip)
+            if not nagiosSeviceValidatioOk:
+                nagiosServiceErrors.append(vpn)
 
-        return Response({'message': 'Files uploaded', 'files_uploaded_ok': len(filesUploaded), 'files_failed': len(filesError), 'errors': filesError, 'ok': filesUploaded}, status=status.HTTP_200_OK)
+            if len(nagiosServiceErrors) > 0:
+                logging.error("Favor de revisar el nagios en los siguientes PTs, hubo problemas{0}".format(
+                    nagiosServiceErrors))
+
+        return Response({'pts_failed': len(nagiosServiceErrors), 'list_pts_failed': nagiosServiceErrors, 'message': 'Files uploaded', 'files_uploaded_ok': len(filesUploaded), 'files_failed': len(filesError), 'errors': filesError, 'ok': filesUploaded}, status=status.HTTP_200_OK)
