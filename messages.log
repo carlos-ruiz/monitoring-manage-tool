@@ -3129,3 +3129,5 @@ AttributeError: 'set' object has no attribute 'split'
 2021-06-01 05:52:23,927 - INFO - paramiko.transport - Authentication (password) successful!
 2021-06-01 05:52:24,079 - INFO - root - Errors: 0
 2021-06-01 05:56:15,950 - INFO - django.utils.autoreload - /home/carlos/kio/PITA/cfgs/views.py changed, reloading.
+2021-07-27 04:28:43,606 - INFO - django.utils.autoreload - /home/PITA/cfgs/views.py changed, reloading.
+2021-07-27 04:29:28,942 - INFO - django.utils.autoreload - /home/PITA/cfgs/views.py changed, reloading.

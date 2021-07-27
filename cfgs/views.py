@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 import paramiko
-from .models import PT, DeviceType, File, CFG
+from .models import PT, DeviceType, CFG
 from rest_framework import viewsets
-from .serializers import PTSerializer, DeviceTypeSerializer, FileSerializer, CFGSerializer
+from .serializers import PTSerializer, DeviceTypeSerializer, FileSerializer
 from rest_framework.decorators import action
 from rest_framework.response import Response
 import csv
@@ -11,15 +11,11 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework import status
 import shutil
 import os
-import json
 import zipfile
 from datetime import date
-import shlex
-import subprocess
 from .SSHConnection import SSHConnection
 import logging
-
-# Create your endpoints here.
+from .secrets import user, password
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s - %(message)s', filename='messages.log',
                     encoding='utf-8', level=logging.INFO)
@@ -64,8 +60,7 @@ def zip_cfgs(source_path):
         for filename in files:
             absname = os.path.abspath(os.path.join(dirname, filename))
             arcname = absname[len(src) + 1:]
-            # logging.info('zipping %s as %s' %
-            #  (os.path.join(dirname, filename), arcname))
+            logging.info('zipping %s as %s' % (os.path.join(dirname, filename), arcname))
             zf.write(absname, arcname)
     zf.close()
     return zip_path
@@ -92,8 +87,7 @@ def validateUploads(pt, ipnagios):
                 print(stdout.readlines())
                 return True
             else:
-                logging.error(
-                    "Se presentan errores en el PT {0}, Favor de revisar el nagios".format(pt))
+                logging.error("Se presentan errores en el PT {0}, Favor de revisar el nagios".format(pt))
                 return False
     else:
         logging.error(stderr.read())
@@ -110,7 +104,7 @@ class PTsViewSet(viewsets.ModelViewSet):
         pts = PT.objects.all()
 
         if len(pts) == 0:
-            pts_source_data = BASE_DIR+"/cfgs/sources/pts_data.csv"
+            pts_source_data = str(BASE_DIR)+"/cfgs/sources/pts_data.csv"
             with open(pts_source_data) as data:
                 reader = csv.reader(data, delimiter="|")
                 for line in reader:
@@ -164,9 +158,9 @@ class CFGsViewSet(viewsets.ViewSet):
     @ action(detail=False, methods=['post'], name='Download zip')
     def download_cfgs(self, request, *args, **kwargs):
         source_path = request.data.get('path')
-        # logging.debug("CFGs Path: {0}".format(source_path))
+        logging.debug("CFGs Path: {0}".format(source_path))
         zip_path = zip_cfgs(source_path)
-        # logging.debug("Path zip: {0}".format(zip_path))
+        logging.debug("Path zip: {0}".format(zip_path))
         zip_file = open(zip_path, 'rb')
         response = HttpResponse(
             zip_file, content_type='application/force-download')
@@ -189,8 +183,7 @@ class CFGsViewSet(viewsets.ViewSet):
             os.mkdir(generatedPath)
         except:
             print("Error")
-            # logging.error(
-            # "Error al borrar el folder: {0}".format(generatedPath))
+            logging.error("Error al borrar el folder: {0}".format(generatedPath))
 
         with open(file_path) as f:
             reader = csv.reader(f, delimiter=",")
@@ -205,8 +198,7 @@ class CFGsViewSet(viewsets.ViewSet):
                 newFileName = hostname+".cfg"
 
                 if len(template) == 0:
-                    # logging.error(
-                    # "No se encontró la plantilla para este tipo de equipo")
+                    logging.error("No se encontró la plantilla para este tipo de equipo")
                     numFail += 1
                     errors.append(newFileName)
                     continue
@@ -215,8 +207,7 @@ class CFGsViewSet(viewsets.ViewSet):
                     with open(template) as tc:
                         t = tc.read()
                 except:
-                    # logging.error(
-                    # "No se puede leer la plantilla {0}".format(template))
+                    logging.error("No se puede leer la plantilla {0}".format(template))
                     numFail += 1
                     errors.append(newFileName)
                     continue
@@ -235,15 +226,14 @@ class CFGsViewSet(viewsets.ViewSet):
 
                         hostgroup = DeviceType.objects.get(
                             device_type=hostgrouptxt)
-                        cfg = CFG(folder=generatedPath, file=newFileName,
-                                  hostgroup=hostgroup, vpn=pt, uploaded=False)
+                        cfg = CFG(folder=generatedPath, file=newFileName, hostgroup=hostgroup, vpn=pt, uploaded=False)
                         cfg.save()
                     except IOError as e:
-                        # logging.error("Error al escribir el archivo %s" % e)
+                        logging.error("Error al escribir el archivo %s" % e)
                         numFail += 1
                         errors.append(newFileName)
                     except Exception as e:
-                        # logging.error("Error desconocido: {0}".format(e))
+                        logging.error("Error desconocido: {0}".format(e))
                         numFail += 1
                         errors.append(newFileName)
 
@@ -297,7 +287,7 @@ class CFGsViewSet(viewsets.ViewSet):
                     sshConnection = SSHConnection().getConnection(ip)
                     sshConnection.exec_command(create_folder)
                     t = paramiko.Transport((ip, 22))
-                    t.connect(username='root', password='Pita123$')
+                    t.connect(username=user, password=password)
                     sftp = paramiko.SFTPClient.from_transport(t)
                     for file in files:
                         lastSlash = file.rfind('/')
@@ -309,9 +299,6 @@ class CFGsViewSet(viewsets.ViewSet):
                         sftp.put(file, dest)
                     sftp.close()
                     t.close()
-                    # stdin, stdout, stderr = sshConnection.exec_command(
-                    #     command_line)
-                    # logging.info("Salida: {0}".format(stdout))
                     sshConnection.close()
 
                     filesNames = ''
@@ -341,7 +328,6 @@ class CFGsViewSet(viewsets.ViewSet):
                 nagiosServiceErrors.append(vpn)
 
             if len(nagiosServiceErrors) > 0:
-                logging.error("Favor de revisar el nagios en los siguientes PTs, hubo problemas{0}".format(
-                    nagiosServiceErrors))
+                logging.error("Favor de revisar el nagios en los siguientes PTs, hubo problemas{0}".format(nagiosServiceErrors))
 
         return Response({'pts_failed': len(nagiosServiceErrors), 'list_pts_failed': nagiosServiceErrors, 'message': 'Files uploaded', 'files_uploaded_ok': len(filesUploaded), 'files_failed': len(filesError), 'errors': filesError, 'ok': filesUploaded}, status=status.HTTP_200_OK)

@@ -3,3 +3,4 @@ cfgs/__pycache__/
 PITA/__pycache__/
 media/
 cfgs/generated
+cfgs/secrets.py
