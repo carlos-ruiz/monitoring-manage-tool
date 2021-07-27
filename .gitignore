@@ -4,3 +4,5 @@ PITA/__pycache__/
 media/
 cfgs/generated
 cfgs/secrets.py
+cfgs/sources/pts_data.csv
+messages.log
