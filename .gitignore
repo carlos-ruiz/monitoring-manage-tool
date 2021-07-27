@@ -6,3 +6,4 @@ cfgs/generated
 cfgs/secrets.py
 cfgs/sources/pts_data.csv
 messages.log
+db.sqlite3
