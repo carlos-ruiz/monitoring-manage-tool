@@ -47,7 +47,7 @@ def chooseTemplate(templateType):
         template = "SVR-ESX.cfg"
     elif templateType == "ap":
         template = "AP.cfg"
-    elif templateType == "planet":
+    elif templateType == "planets":
         template = "PLANET.cfg"
     elif templateType == "tsmnodisk":
         template = "SVR-TSM-SIN-DISCO.cfg"
@@ -132,6 +132,7 @@ class DeviceTypeViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=["post"], name="Devices Type Initialize")
     def dt_init(self, request):
+        DeviceType.objects.all().delete()
         types = DeviceType.objects.all()
         if len(types) == 0:
             types_source_data = str(BASE_DIR) + "/cfgs/sources/device_types.csv"
