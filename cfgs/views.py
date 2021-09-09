@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 import paramiko
 from .models import PT, DeviceType, CFG
-from rest_framework import viewsets
+from rest_framework import serializers, viewsets
 from .serializers import PTSerializer, DeviceTypeSerializer, FileSerializer
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -110,11 +110,10 @@ class PTsViewSet(viewsets.ModelViewSet):
     queryset = PT.objects.all()
     serializer_class = PTSerializer
 
-    @action(detail=False, methods=["post"], name="PTs Initialize")
+    @action(detail=False, methods=['post'], name="PTs Initialize")
     def pts_init(self, request):
-        # pts = PT.objects.all()
+        pts = PT.objects.all().delete()
 
-        # if len(pts) > 0:
         pts_source_data = str(BASE_DIR) + "/cfgs/sources/pts_data.csv"
         with open(pts_source_data) as data:
             reader = csv.reader(data, delimiter="|")
@@ -125,6 +124,54 @@ class PTsViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(pts, many=True)
         return Response(serializer.data)
 
+    @action(detail=False, methods=['post'], name="New PT")
+    def add(self, request):
+        print("Entra en el create - {0}".format(request.data))
+        serializer = PTSerializer(data=request.data)
+        if serializer.is_valid():
+            print("Guardando")
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    @action(detail=False, methods=['delete'], name="Remove PT")
+    def remove(self, request):
+        logging.info("entra en el remove")
+
+        vpn = request.data.get("vpn")
+
+        try:
+            pt = PT.objects.get(vpn=vpn)
+        except PT.DoesNotExist:
+            return Response(data="PT no encontrado",status=status.HTTP_404_NOT_FOUND)
+
+        print("Located {0}".format(pt))
+        try:
+            pt.delete()
+            print("Borrado")
+            return Response("PT borrado")
+        except:
+            print("fallo al borrar el PT")
+            return Response(data="No se pudo borrar el PT",status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    @action(detail=False, methods=['put'], name="Edit PT")
+    def edit(self, request):
+        print("entra en el edit - {0}".format(request.data))
+        vpn = request.data.get("vpn")
+        print("VPN: {0}".format(vpn))
+
+        try:
+            pt = PT.objects.get(vpn=vpn)
+        except PT.DoesNotExist:
+            return Response(data="PT no encontrado",status=status.HTTP_404_NOT_FOUND)
+
+        print("Located {0}".format(pt))
+        serializer = PTSerializer(pt, data=request.data.get("new"))
+        if serializer.is_valid():
+            print("Serializer valid")
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class DeviceTypeViewSet(viewsets.ModelViewSet):
     queryset = DeviceType.objects.all()
